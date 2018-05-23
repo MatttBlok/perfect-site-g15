@@ -54,6 +54,10 @@ $username = $cookieData['name'];
         <li><a href="./articles/">Articles</a></li>
         <li><a href="./partners/">Partners</a></li>
         <li><a href="./airlineCompanies/">Airline Companies</a></li>
+        <li><a href="./imgsGallery/">Images Gallery</a></li>
+        <li><a href="./comments/">Comments</a></li>
+        <li><a href="./topHundred/">Top 100</a></li>
+        <li><a href="./fichesDesc/">Fiches descriptives</a></li>
     </ul>
 </body>
 </html>

@@ -47,14 +47,18 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC)
 
 <form action="doeditArticle.php" method="post">
     <input type="hidden" name="id" value="<?=$row['id']?>">
-    <label for="category">category</label> <input type="text" name="category" value="<?=$row['category']?>">
+    <label for="category">category</label>
+    <select name="category">
+        <option value="Bons plans aériens" <?php if ($row['category'] === "Bons plans aériens") :?>selected<?php endif;?>>Bons plans aériens</option>
+        <option value="Voyages" <?php if ($row['category'] === "Voyages") :?>selected<?php endif;?>>Voyages</option>
+    </select>
     <label for="title">title</label> <input type="text" name="title" value="<?=$row['title']?>">
     <label for="subtitle">subtitle</label> <input type="text" name="subtitle" value="<?=$row['subtitle']?>">
     <label for="content">content</label><textarea name="content"><?=$row['content']?></textarea><br>
     <label for="imgSrc">imgSrc</label> <input type="text" name="imgSrc" value="<?=$row['imgSrc']?>">
     <label for="imgAlt">imgAlt</label> <input type="text" name="imgAlt" value="<?=$row['imgAlt']?>">
     <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle" value="<?=$row['imgTitle']?>">
-    <label for="publishedDate">publishedDate</label> <input type="text" name="publishedDate" value="<?=$row['publishedDate']?>">
+    <input type="hidden" name="publishedDate" value="<?=$row['publishedDate']?>">
     <label for="author">author</label> <input type="text" name="author" value="<?=$row['author']?>">
     <label for="signature">signature</label> <input type="text" name="signature" value="<?=$row['signature']?>">
     <label for="logoSrc">logoSrc</label> <input type="text" name="logoSrc" value="<?=$row['logoSrc']?>">

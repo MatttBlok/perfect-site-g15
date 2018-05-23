@@ -45,18 +45,50 @@ CREATE TABLE `airlineCompanies` (
   `twitterAccount` VARCHAR(128) NOT NULL
 );
 
-DROP TABLE IF EXISTS `imagesBoxes`;
-CREATE TABLE `imagesBoxes` (
+DROP TABLE IF EXISTS `imgsGallery`;
+CREATE TABLE `imgsGallery` (
+  `id`             INT PRIMARY KEY AUTO_INCREMENT,
+  `imgSrc`         VARCHAR(2048) NOT NULL,
+  `imgAlt`         VARCHAR(128) NOT NULL,
+  `imgTitle`       VARCHAR(128) NOT NULL
+);
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE `comments` (
+  `id`             INT PRIMARY KEY AUTO_INCREMENT,
+  `content`        VARCHAR(128) NOT NULL,
+  `author`         VARCHAR(128) NOT NULL,
+  `publishedDate`  VARCHAR(128) NOT NULL
+);
+
+DROP TABLE IF EXISTS `topHundred`;
+CREATE TABLE `topHundred` (
   `id`             INT PRIMARY KEY AUTO_INCREMENT,
   `category`       VARCHAR(128) NOT NULL,
+  `name`           VARCHAR(128) NOT NULL,
+  `localisation`   VARCHAR(128) NOT NULL,
+  `ranking`        INT NOT NULL,
   `imgSrc`         VARCHAR(2048) NOT NULL,
   `imgAlt`         VARCHAR(128) NOT NULL,
   `imgTitle`       VARCHAR(128) NOT NULL,
-  `comment`        VARCHAR(128) NOT NULL DEFAULT ''
+  `description`    VARCHAR(128) NOT NULL,
+  `link`           VARCHAR(328) NOT NULL,
+);
+
+
+DROP TABLE IF EXISTS `descCards`;
+CREATE TABLE `descCards` (
+  `id`             INT PRIMARY KEY AUTO_INCREMENT,
+  `category`       VARCHAR(128) NOT NULL,
+  `name`           VARCHAR(128) NOT NULL,
+  `localisation`   VARCHAR(128) NOT NULL,
+  `rating`         INT NOT NULL,
+  `desc`           VARCHAR(128) NOT NULL,
+  `imgSrc`         VARCHAR(2048) NOT NULL,
+  `imgAlt`         VARCHAR(128) NOT NULL,
+  `imgTitle`       VARCHAR(128) NOT NULL,
+  `schedule`       VARCHAR(128) NOT NULL,
+  `price`          VARCHAR(128) NOT NULL
 );
 
 INSERT INTO `admin` (`name`, `password`) VALUES ('admin', 'admin');
-
-
-
-
