@@ -72,7 +72,7 @@ CREATE TABLE `topHundred` (
   `imgAlt`         VARCHAR(128) NOT NULL,
   `imgTitle`       VARCHAR(128) NOT NULL,
   `description`    VARCHAR(128) NOT NULL,
-  `link`           VARCHAR(328) NOT NULL,
+  `link`           VARCHAR(328) NOT NULL
 );
 
 
