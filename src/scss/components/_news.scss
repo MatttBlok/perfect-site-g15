@@ -1,0 +1,56 @@
+.news {
+  margin-top: 100px;
+  &-feed {
+    height: 669px;
+    &-title {
+      font-size: 32px;
+    }
+    &-box {
+      background-color: #F8F8F8;
+      margin: 25px;
+      &-flex{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        &-title{
+          font-weight: bold;
+          font-size: 16px;
+        }
+        &-author{
+          font-size: 12px;
+        }
+      }
+      &-subtitle{
+        font-size: 12px;
+        padding-left: 15px;
+      }
+      &-content{
+        line-height: 20px;
+        font-size: 12px;
+        padding: 15px;
+      }
+    }
+    &-more {
+      cursor: pointer;
+      text-align: center;
+      padding: 10px;
+      height: 40px;
+      background-image: linear-gradient(-45deg, #6BADF0 0%, #CA93FF 100%);
+      &-btn {
+        padding-top: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+  &-twitter {
+    overflow: scroll;
+    height: 669px;
+    @include for-size(tablet-portrait-up) {
+    };
+  }
+}
+.twitter-timeline {
+  display: block;
+}
