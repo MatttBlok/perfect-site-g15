@@ -7,8 +7,7 @@ if (!isLogged()) {
 	die();
 }
 
-
-$request = 'SELECT `id`, `title` FROM `articles`;';
+$request = 'SELECT `id`, `content` FROM `comments`;';
 
 $stmt = $pdo->prepare($request);
 $stmt->execute();
@@ -53,40 +52,26 @@ $today = date("j/n/Y");
 <br>
 <a href="../">Go back to the home page</a>
 <br>
-<h2>Your current articles:</h2>
+<h2>Your current comments:</h2>
 <table>
     <tr>
         <th>id</th>
-        <th>title</th>
+        <th>content</th>
     </tr>
     <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
         <tr>
             <td><?=$row['id']?></td>
-            <td><a href="showArticle.php?id=<?=$row['id']?>"><?=$row['title']?></a></td>
+            <td><a href="showComments.php?id=<?=$row['id']?>"><?=$row['content']?></a></td>
         </tr>
     <?php endwhile ?>
 </table>
 <br>
-<h2>Add an article here:</h2>
-<form action="doaddArticle.php" method="post">
-    <label for="category">category</label>
-    <select name="category">
-        <option value="Bons plans aériens" selected>Bons plans aériens</option>
-        <option value="Voyages">Voyages</option>
-    </select>
-    <label for="title">title</label> <input type="text" name="title">
-    <label for="subtitle">subtitle</label> <input type="text" name="subtitle">
-    <label for="content">content</label><textarea name="content"></textarea><br>
-    <label for="imgSrc">imgSrc</label> <input type="text" name="imgSrc">
-    <label for="imgAlt">imgAlt</label> <input type="text" name="imgAlt">
-    <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle">
-    <input type="hidden" name="publishedDate" value="<?= $today ?>">
+<h2>Add a comment here:</h2>
+<form action="doaddComments.php" method="post">
+    <label for="content">content</label> <input type="text" name="content">
     <label for="author">author</label> <input type="text" name="author">
-    <label for="signature">signature</label> <input type="text" name="signature">
-    <label for="logoSrc">logoSrc</label> <input type="text" name="logoSrc">
-    <label for="logoAlt">logoAlt</label> <input type="text" name="logoAlt">
-    <label for="logoTitle">logoTitle</label> <input type="text" name="logoTitle">
-    <input type="submit" value="add this article">
+    <input type="hidden" name="publishedDate" value="<?= $today ?>">
+    <input type="submit" value="add this image">
 </form>
 <?php if (isset($_GET['error'])) :?>
     <p class="error"><?=$_GET['error']?></p>
