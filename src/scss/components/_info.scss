@@ -1,0 +1,33 @@
+.info{
+  margin-top: 50px;
+  &-mook{
+    &-container{
+      background-color: #F8F8F8;
+      text-align: center;
+      &-img{
+        padding: 40px;
+        width: 40%;
+      }
+    }
+    &-text{
+      width: 60%;
+      margin: auto;
+      padding: 30px;
+      &-title{
+        text-align: center;
+        display: block;
+        font-weight: medium;
+        font-size: 24px;
+        padding-bottom: 15px;
+        @include for-size(tablet-portrait-up){
+          font-size: 36px;
+          text-align: left;
+        };
+      }
+      &-content{
+        font-weight: lighter;
+        font-size: 12px;
+      }
+    }
+  }
+}

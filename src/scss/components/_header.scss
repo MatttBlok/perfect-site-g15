@@ -1,11 +1,13 @@
-.bg {
-  overflow: hidden;
-  margin-left: -230px;
-  position: absolute;
-  z-index: -100;
-  @include for-size(tablet-portrait-up){
-    margin-left: 200px;
-  };
+.container {
+  width: 100vw;
+  &-bg {
+    width: 100%;
+    position: absolute;
+    z-index: -100;
+    &-hero {
+      width: 100%;
+    }
+  }
 }
 
 .nav {
@@ -29,15 +31,18 @@
     height: 2px;
     margin: 5px;
     background-color: $mainColor;
-    @include for-size(tablet-portrait-up) {
+    @include for-size(tablet-landscape-up) {
       display: none;
     };
   }
   &-list {
     display: none;
-    @include for-size(tablet-portrait-up) {
+    @include for-size(tablet-landscape-up) {
       margin-left: 100px;
       display: flex;
+    };
+    @include for-size(desktop-up) {
+      margin-left: -100;
     };
     &-item {
       margin-left: 20px;
@@ -91,30 +96,3 @@
     font-size: 14px;
   }
 }
-// .nav {
-//   padding-top: 60px;
-//   &-list {
-//     display: none;
-//     font-weight: light;
-//     &-item {
-//       &-link {
-//         margin-left: 20px;
-//         font-size: 12px;
-//         color: $mainColor;
-//       }
-//     }
-//     @include for-size(tablet-portrait-up) {
-//       display: flex;
-//     }
-//   }
-//   &-burger {
-//     @include for-size(tablet-portrait-up) {
-//       display: none;
-//     };
-//     &-bar {
-//       width: 25px;
-//       height: 2px;
-//       background-color: $mainColor;
-//     }
-//   }
-// }

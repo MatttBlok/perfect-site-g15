@@ -1,7 +1,9 @@
 //global
-@import "global/reset.scss";
-@import "global/variables.scss";
+@import "global/reset";
+@import "global/variables";
 //mixins
-@import "mixins/forsize.scss";
+@import "mixins/forsize";
 // components
-@import "components/header.scss";
+@import "components/header";
+@import "components/news";
+@import "components/info";
