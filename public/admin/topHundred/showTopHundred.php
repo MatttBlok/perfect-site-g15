@@ -12,10 +12,12 @@ if (!isLogged()) {
     die();
 }
 
+
+
 $request = "SELECT 
-`id`, `category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle` 
+`id`, `category`, `name`, `localisation`, `ranking`, `imgSrc`, `imgAlt`, `imgTitle`, `description`, `link` 
 FROM 
-`articles` 
+`topHundred` 
 WHERE 
 `id` = :id
 ;";
@@ -50,44 +52,36 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     </style>
 </head>
 <body>
-<a href="./">Go back to the article page</a>
-<h1>Details of <?=$row['title']?> :</h1>
+<a href="./">Go back to the topHundred page</a>
+<h1>Details of <?=$row['name']?> :</h1>
 <table>
     <tr>
         <th>id</th>
         <th>category</th>
-        <th>title</th>
-        <th>subtitle</th>
-        <th>content</th>
+        <th>name</th>
+        <th>localisation</th>
+        <th>ranking</th>
         <th>imgSrc</th>
         <th>imgAlt</th>
         <th>imgTitle</th>
-        <th>publishedDate</th>
-        <th>author</th>
-        <th>signature</th>
-        <th>logoSrc</th>
-        <th>logoAlt</th>
-        <th>logoTitle</th>
+        <th>description</th>
+        <th>link</th>
     </tr>
     <tr>
         <td><?=$row['id']?></td>
         <td><?=$row['category']?></td>
-        <td><?=$row['title']?></td>
-        <td><?=$row['subtitle']?></td>
-        <td><?=nl2br($row['content'])?></td>
+        <td><?=$row['name']?></td>
+        <td><?=$row['localisation']?></td>
+        <td><?=$row['ranking']?></td>
         <td><?=$row['imgSrc']?></td>
         <td><?=$row['imgAlt']?></td>
         <td><?=$row['imgTitle']?></td>
-        <td><?=$row['publishedDate']?></td>
-        <td><?=$row['author']?></td>
-        <td><?=$row['signature']?></td>
-        <td><?=$row['logoSrc']?></td>
-        <td><?=$row['logoAlt']?></td>
-        <td><?=$row['logoTitle']?></td>
+        <td><?=$row['description']?></td>
+        <td><?=$row['link']?></td>
     </tr>
 </table>
 <br>
-<a href="editArticle.php?id=<?=$row['id']?>">edit</a>
-<a href="deleteArticle.php?id=<?=$row['id']?>">delete</a>
+<a href="editTopHundred.php?id=<?=$row['id']?>">edit</a>
+<a href="deleteTopHundred.php?id=<?=$row['id']?>">delete</a>
 </body>
 </html>

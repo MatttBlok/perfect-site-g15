@@ -6,7 +6,7 @@ if (!isset($_POST['id'])) {
 
 require_once '../../../includes/connection.php';
 
-$request = 'DELETE FROM `articles` WHERE `id` = :id';
+$request = 'DELETE FROM `descCards` WHERE `id` = :id';
 
 $stmt = $pdo->prepare($request);
 $stmt->bindValue(':id', $_POST['id']);

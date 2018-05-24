@@ -67,7 +67,7 @@ CREATE TABLE `topHundred` (
   `category`       VARCHAR(128) NOT NULL,
   `name`           VARCHAR(128) NOT NULL,
   `localisation`   VARCHAR(128) NOT NULL,
-  `ranking`        INT NOT NULL,
+  `ranking`        VARCHAR(128) NOT NULL,
   `imgSrc`         VARCHAR(2048) NOT NULL,
   `imgAlt`         VARCHAR(128) NOT NULL,
   `imgTitle`       VARCHAR(128) NOT NULL,
@@ -92,3 +92,18 @@ CREATE TABLE `descCards` (
 );
 
 INSERT INTO `admin` (`name`, `password`) VALUES ('admin', 'admin');
+INSERT INTO `articles`
+(`category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle`)
+VALUES
+('Bon plan aérien', 'Lorem', 'Ipsum', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'jaj', 'jaj', 'jajjijaj', '24/5/18', 'Someone', 'oui', 'non', 'nope', 'yes')
+;
+INSERT INTO `articles`
+(`category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle`)
+VALUES
+('Voyage', 'Lorem', 'Ipsum', 'LOREM ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'jaj', 'jaj', 'jajjijaj', '24/5/18', 'Someone else', 'oui', 'non', 'nope', 'yes')
+;
+INSERT INTO `articles`
+(`category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle`)
+VALUES
+('Voyage', 'Lirem', 'Ipsum', 'LIREM ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'jaj', 'jaj', 'jajjijaj', '24/5/18', 'Again Someone else', 'oui', 'non', 'nope', 'yes')
+;
