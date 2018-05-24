@@ -88,6 +88,7 @@ $stmt->execute();
     <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle"">
     <label for="schedule">schedule</label> <input type="text" name="schedule"">
     <label for="price">price</label> <input type="text" name="price">
+    <label for="link">link</label> <input type="text" name="link">
     <input type="submit" value="add this description card">
 </form>
 <?php if (isset($_GET['error'])) :?>

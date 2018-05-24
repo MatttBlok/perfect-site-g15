@@ -1,7 +1,7 @@
 <?php
 if (!isset($_POST['id']) || empty($_POST['category']) || empty($_POST['name']) || empty($_POST['localisation'])
     || empty($_POST['rating']) || empty($_POST['imgSrc']) || empty($_POST['imgAlt']) || empty($_POST['imgTitle'])
-    ||  empty($_POST['desc']) ||  empty($_POST['schedule']) ||  empty($_POST['price'])) {
+    ||  empty($_POST['desc']) ||  empty($_POST['schedule']) ||  empty($_POST['price']) ||  empty($_POST['link'])) {
     header('Location: ./index.php?noidorpostdataprovided');
     exit;
 }
@@ -19,7 +19,8 @@ SET
 `imgAlt` = :imgAlt,
 `imgTitle` = :imgTitle,
 `schedule` = :schedule,
-`price` = :price
+`price` = :price,
+`link` = :link
 WHERE 
 `id` = :id
 ;";
@@ -36,6 +37,7 @@ $stmt->bindValue(':imgAlt', htmlentities($_POST['imgAlt']));
 $stmt->bindValue(':imgTitle', htmlentities($_POST['imgTitle']));
 $stmt->bindValue(':schedule', htmlentities($_POST['schedule']));
 $stmt->bindValue(':price', htmlentities($_POST['price']));
+$stmt->bindValue(':link', htmlentities($_POST['link']));
 $stmt->execute();
 
 header('Location: ./index.php');
