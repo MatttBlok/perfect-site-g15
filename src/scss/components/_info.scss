@@ -6,13 +6,73 @@
       text-align: center;
       &-img{
         padding: 40px;
-        width: 40%;
+        width: 60%;
       }
     }
     &-text{
       width: 60%;
       margin: auto;
       padding: 30px;
+      &-title{
+        text-align: center;
+        display: block;
+        font-weight: medium;
+        font-size: 24px;
+        padding-bottom: 15px;
+        @include for-size(tablet-portrait-up){
+          font-size: 36px;
+          text-align: left;
+        };
+      }
+      &-content{
+        font-weight: lighter;
+        font-size: 12px;
+      }
+    }
+  }
+  &-cards{
+    &-container{
+      background-color: #F8F8F8;
+      text-align: center;
+      &-img{
+        padding: 40px;
+      }
+    }
+    &-text{
+      width: 60%;
+      margin: auto;
+      padding: 30px;
+      padding-top: 200px;
+      &-title{
+        text-align: center;
+        display: block;
+        font-weight: medium;
+        font-size: 24px;
+        padding-bottom: 15px;
+        @include for-size(tablet-portrait-up){
+          font-size: 36px;
+          text-align: left;
+        };
+      }
+      &-content{
+        font-weight: lighter;
+        font-size: 12px;
+      }
+    }
+  }
+  &-app{
+    &-container{
+      background-color: #F8F8F8;
+      text-align: center;
+      &-img{
+        padding: 40px;
+      }
+    }
+    &-text{
+      width: 60%;
+      margin: auto;
+      padding: 30px;
+      padding-top: 200px;
       &-title{
         text-align: center;
         display: block;

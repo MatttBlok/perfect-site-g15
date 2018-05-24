@@ -8,23 +8,23 @@
     &-box {
       background-color: #F8F8F8;
       margin: 25px;
-      &-flex{
+      &-flex {
         display: flex;
         justify-content: space-between;
         padding: 10px;
-        &-title{
+        &-title {
           font-weight: bold;
           font-size: 16px;
         }
-        &-author{
+        &-author {
           font-size: 12px;
         }
       }
-      &-subtitle{
+      &-subtitle {
         font-size: 12px;
         padding-left: 15px;
       }
-      &-content{
+      &-content {
         line-height: 20px;
         font-size: 12px;
         padding: 15px;
@@ -47,10 +47,11 @@
   &-twitter {
     overflow: scroll;
     height: 669px;
-    @include for-size(tablet-portrait-up) {
-    };
+    @include for-size(tablet-portrait-up) {}
+    ;
   }
 }
+
 .twitter-timeline {
   display: block;
 }

@@ -17,13 +17,15 @@
       display: none;
       @include for-size(tablet-portrait-up) {
         display: block;
-      };
+      }
+      ;
     }
     &-mobile {
       width: 50%;
       @include for-size(tablet-portrait-up) {
         display: none;
-      };
+      }
+      ;
     }
   }
   &-burger {
@@ -33,17 +35,20 @@
     background-color: $mainColor;
     @include for-size(tablet-landscape-up) {
       display: none;
-    };
+    }
+    ;
   }
   &-list {
     display: none;
     @include for-size(tablet-landscape-up) {
       margin-left: 100px;
       display: flex;
-    };
+    }
+    ;
     @include for-size(desktop-up) {
       margin-left: -100;
-    };
+    }
+    ;
     &-item {
       margin-left: 20px;
       font-size: 12px;
@@ -57,13 +62,15 @@
   margin-top: 49px;
   @include for-size(tablet-landscape-up) {
     font-size: 80px;
-  };
+  }
+  ;
   &-sub {
     font-size: 10px;
     margin-top: 5px;
     @include for-size(tablet-landscape-up) {
       font-size: 16px;
-    };
+    }
+    ;
   }
 }
 
@@ -71,8 +78,9 @@
   display: none;
   @include for-size(tablet-landscape-up) {
     display: block;
-  };
-  &-icon{
+  }
+  ;
+  &-icon {
     width: 50%;
     margin-top: 5px;
     cursor: pointer;
@@ -85,13 +93,14 @@
   background-image: linear-gradient(-45deg, #6BADF0 0%, #CA93FF 100%);
   @include for-size(tablet-portrait-up) {
     //margin-top: 380px;
-  };
+  }
+  ;
   &-subtitle {
     padding-top: 38px;
     padding-bottom: 5px;
     font-size: 10px;
   }
-  &-title {
+  &-title {
     font-weight: bold;
     font-size: 14px;
   }
