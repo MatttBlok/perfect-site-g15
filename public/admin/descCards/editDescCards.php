@@ -13,7 +13,7 @@ if (!isLogged()) {
 }
 
 $request = "SELECT 
-`id`, `category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price` 
+`id`, `category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price`, `link` 
 FROM 
 `descCards`
 WHERE 
@@ -69,6 +69,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC)
     <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle" value="<?=$row['imgTitle']?>">
     <label for="schedule">schedule</label> <input type="text" name="schedule" value="<?=$row['schedule']?>">
     <label for="price">price</label> <input type="text" name="price" value="<?=$row['price']?>">
+    <label for="link">link</label> <input type="text" name="link" value="<?=$row['link']?>">
     <input type="submit" value="edit this description card">
 </form>
 

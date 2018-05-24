@@ -13,7 +13,7 @@ if (!isLogged()) {
 }
 
 $request = "SELECT 
-`id`, `category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price` 
+`id`, `category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price`, `link` 
 FROM 
 `descCards`
 WHERE 
@@ -65,6 +65,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <th>imgTitle</th>
         <th>schedule</th>
         <th>price</th>
+        <th>link</th>
     </tr>
     <tr>
         <td><?=$row['id']?></td>
@@ -78,6 +79,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <td><?=$row['imgTitle']?></td>
         <td><?=$row['schedule']?></td>
         <td><?=$row['price']?></td>
+        <td><?=$row['link']?></td>
     </tr>
 </table>
 <br>

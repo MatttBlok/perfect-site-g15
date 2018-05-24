@@ -88,7 +88,8 @@ CREATE TABLE `descCards` (
   `imgAlt`         VARCHAR(128) NOT NULL,
   `imgTitle`       VARCHAR(128) NOT NULL,
   `schedule`       VARCHAR(128) NOT NULL,
-  `price`          VARCHAR(128) NOT NULL
+  `price`          VARCHAR(128) NOT NULL,
+  `link`           VARCHAR(2018) NOT NULL
 );
 
 INSERT INTO `admin` (`name`, `password`) VALUES ('admin', 'admin');

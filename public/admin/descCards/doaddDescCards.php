@@ -1,7 +1,7 @@
 <?php
 if (empty($_POST['category']) || empty($_POST['name']) || empty($_POST['localisation'])
     || empty($_POST['rating']) || empty($_POST['imgSrc']) || empty($_POST['imgAlt']) || empty($_POST['imgTitle'])
-    ||  empty($_POST['desc']) ||  empty($_POST['schedule']) ||  empty($_POST['price'])) {
+    ||  empty($_POST['desc']) ||  empty($_POST['schedule']) ||  empty($_POST['price']) ||  empty($_POST['link'])) {
     header('Location: ./index.php?error=empty field(s)');
     exit;
 }
@@ -9,9 +9,9 @@ if (empty($_POST['category']) || empty($_POST['name']) || empty($_POST['localisa
 require_once '../../../includes/connection.php';
 
 $request = "INSERT INTO `descCards` 
-(`category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price`) 
+(`category`, `name`, `localisation`, `rating`, `desc`, `imgSrc`, `imgAlt`, `imgTitle`, `schedule`, `price`, `link`) 
 VALUES 
-(:category, :name, :localisation, :rating, :desc, :imgSrc, :imgAlt, :imgTitle, :schedule, :price)
+(:category, :name, :localisation, :rating, :desc, :imgSrc, :imgAlt, :imgTitle, :schedule, :price, :link)
 ;";
 
 $stmt = $pdo->prepare($request);
@@ -25,6 +25,7 @@ $stmt->bindValue(':imgAlt', htmlentities($_POST['imgAlt']));
 $stmt->bindValue(':imgTitle', htmlentities($_POST['imgTitle']));
 $stmt->bindValue(':schedule', htmlentities($_POST['schedule']));
 $stmt->bindValue(':price', htmlentities($_POST['price']));
+$stmt->bindValue(':link', htmlentities($_POST['link']));
 $stmt->execute();
 
 header('Location: ./index.php');
