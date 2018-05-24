@@ -57,7 +57,7 @@ $username = $cookieData['name'];
         <li><a href="./imgsGallery/">Images Gallery</a></li>
         <li><a href="./comments/">Comments</a></li>
         <li><a href="./topHundred/">Top 100</a></li>
-        <li><a href="./fichesDesc/">Fiches descriptives</a></li>
+        <li><a href="./descCards/">Fiches descriptives</a></li>
     </ul>
 </body>
 </html>

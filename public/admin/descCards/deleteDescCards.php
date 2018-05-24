@@ -12,7 +12,7 @@ if (!isLogged()) {
     die();
 }
 
-$request = 'SELECT `id`, `title` FROM `articles` WHERE `id` = :id;';
+$request = 'SELECT `id`, `name` FROM `descCards` WHERE `id` = :id;';
 
 $stmt = $pdo->prepare($request);
 $stmt->bindValue(':id', $_GET['id']);
@@ -35,9 +35,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC)
     </style>
 </head>
 <body>
-<a href="./showArticle.php?id=<?=$_GET['id']?>">Go back to your article</a>
-<h1>Do you really want to delete <?=$row['title']?> ?</h1>
-<form action="dodeleteArticle.php" method="post">
+<a href="./showDescCards.php?id=<?=$_GET['id']?>">Go back to your description card</a>
+<h1>Do you really want to delete <?=$row['name']?> ?</h1>
+<form action="dodeleteDescCards.php" method="post">
     <input type="hidden" name="id" value="<?=$row['id']?>">
     <input type="submit" value="Yes, I do.">
 </form>

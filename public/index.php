@@ -1,3 +1,20 @@
+<?php
+
+require_once '../includes/connection.php';
+
+$request = "SELECT 
+`id`, `category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle` 
+FROM
+`articles`
+;";
+
+$stmt = $pdo->prepare($request);
+$stmt->execute();
+$row = $stmt->fetchAll();
+
+$rowLength = count($row) - 1;
+$counter = 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,30 +84,20 @@
       <div class="col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-1">
         <div class="news-feed">
           <h2 class="news-feed-title">Actualités</h2>
+        <?php while ($counter < 3) :?>
           <div class="news-feed-box">
             <div class="news-feed-box-flex">
-              <h4 class="news-feed-box-flex-title">Titre de l'article</h4>
-              <p class="news-feed-box-flex-author">Nom de l'auteur</p>
+              <h4 class="news-feed-box-flex-title"><?=$row[$rowLength]['title']?></h4>
+              <p class="news-feed-box-flex-author"><?=$row[$rowLength]['author']?></p>
             </div>
-            <p class="news-feed-box-subtitle">Sous-titre de l'article</p>
-            <p class="news-feed-box-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="news-feed-box-subtitle"><?=$row[$rowLength]['subtitle']?></p>
+            <p class="news-feed-box-content"><?=$row[$rowLength]['content']?></p>
           </div>
-          <div class="news-feed-box">
-            <div class="news-feed-box-flex">
-              <h4 class="news-feed-box-flex-title">Titre de l'article</h4>
-              <p class="news-feed-box-flex-author">Nom de l'auteur</p>
-            </div>
-            <p class="news-feed-box-subtitle">Sous-titre de l'article</p>
-            <p class="news-feed-box-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div class="news-feed-box">
-            <div class="news-feed-box-flex">
-              <h4 class="news-feed-box-flex-title">Titre de l'article</h4>
-              <p class="news-feed-box-flex-author">Nom de l'auteur</p>
-            </div>
-            <p class="news-feed-box-subtitle">Sous-titre de l'article</p>
-            <p class="news-feed-box-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
+        <?php
+            $rowLength--;
+            $counter++;
+            endwhile;
+        ?>
           <div class="row middle-xs">
             <div class="col-xs-10 col-xs-offset-1">
               <div class="news-feed-more">

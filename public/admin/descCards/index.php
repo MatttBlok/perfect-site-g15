@@ -8,13 +8,10 @@ if (!isLogged()) {
 }
 
 
-$request = 'SELECT `id`, `title` FROM `articles`;';
+$request = 'SELECT `id`, `name` FROM `descCards`;';
 
 $stmt = $pdo->prepare($request);
 $stmt->execute();
-
-date_default_timezone_set('UTC');
-$today = date("j/n/Y");
 ?>
 
 <!doctype html>
@@ -53,40 +50,45 @@ $today = date("j/n/Y");
 <br>
 <a href="../">Go back to the home page</a>
 <br>
-<h2>Your current articles:</h2>
+<h2>Your current description card:</h2>
 <table>
     <tr>
         <th>id</th>
-        <th>title</th>
+        <th>name</th>
     </tr>
     <?php while(false !== $row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
         <tr>
             <td><?=$row['id']?></td>
-            <td><a href="showArticle.php?id=<?=$row['id']?>"><?=$row['title']?></a></td>
+            <td><a href="showDescCards.php?id=<?=$row['id']?>"><?=$row['name']?></a></td>
         </tr>
     <?php endwhile ?>
 </table>
 <br>
-<h2>Add an article here:</h2>
-<form action="doaddArticle.php" method="post">
+<h2>Add a description card here:</h2>
+<form action="doaddDescCards.php" method="post">
     <label for="category">category</label>
     <select name="category">
-        <option value="Bons plans aériens" selected>Bons plans aériens</option>
-        <option value="Voyages">Voyages</option>
+        <option value="Bar" selected>Bar</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Hôtel">Hôtel</option>
     </select>
-    <label for="title">title</label> <input type="text" name="title">
-    <label for="subtitle">subtitle</label> <input type="text" name="subtitle">
-    <label for="content">content</label><textarea name="content"></textarea><br>
-    <label for="imgSrc">imgSrc</label> <input type="text" name="imgSrc">
-    <label for="imgAlt">imgAlt</label> <input type="text" name="imgAlt">
-    <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle">
-    <input type="hidden" name="publishedDate" value="<?= $today ?>">
-    <label for="author">author</label> <input type="text" name="author">
-    <label for="signature">signature</label> <input type="text" name="signature">
-    <label for="logoSrc">logoSrc</label> <input type="text" name="logoSrc">
-    <label for="logoAlt">logoAlt</label> <input type="text" name="logoAlt">
-    <label for="logoTitle">logoTitle</label> <input type="text" name="logoTitle">
-    <input type="submit" value="add this article">
+    <label for="name">name</label> <input type="text" name="name"">
+    <label for="localisation">localisation</label> <input type="text" name="localisation"">
+    <select name="rating">
+        <option value="0" selected>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <label for="desc">desc</label><textarea name="desc"></textarea><br>
+    <label for="imgSrc">imgSrc</label> <input type="text" name="imgSrc"">
+    <label for="imgAlt">imgAlt</label> <input type="text" name="imgAlt"">
+    <label for="imgTitle">imgTitle</label> <input type="text" name="imgTitle"">
+    <label for="schedule">schedule</label> <input type="text" name="schedule"">
+    <label for="price">price</label> <input type="text" name="price">
+    <input type="submit" value="add this description card">
 </form>
 <?php if (isset($_GET['error'])) :?>
     <p class="error"><?=$_GET['error']?></p>
