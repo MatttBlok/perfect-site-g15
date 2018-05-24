@@ -108,3 +108,8 @@ INSERT INTO `articles`
 VALUES
 ('Voyage', 'Lirem', 'Ipsum', 'LIREM ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'jaj', 'jaj', 'jajjijaj', '24/5/18', 'Again Someone else', 'oui', 'non', 'nope', 'yes')
 ;
+INSERT INTO `articles`
+(`category`, `title`, `subtitle`, `content`, `imgSrc`, `imgAlt`, `imgTitle`, `publishedDate`, `author`, `signature`, `logoSrc`, `logoAlt`, `logoTitle`)
+VALUES
+('Voyage', 'Lirem', 'Ipsum', 'LIREM ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'jaj', 'jaj', 'jajjijaj', '24/5/18', 'Again Someone else', 'oui', 'non', 'nope', 'yes')
+;
