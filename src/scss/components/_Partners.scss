@@ -1,0 +1,31 @@
+.Partners {
+  position: relative;
+  padding-top: 30px;
+  height: auto;
+  width: 100vw;
+  &-background {
+    position: absolute;
+    width: 150px;
+    height: 400px;
+    z-index: -1;
+    @include for-size(tablet-portrait-up) {}
+  }
+  &-container {
+    padding-top: 20px;
+  }
+  &-title {
+    font-size: 24px;
+  }
+  &-logo {
+    margin-top: 40px;
+    &-itemsAdp {
+      width: 40%;
+    }
+    &-itemsFujifilm {
+      width: 35%;
+    }
+    &-itemsNikon {
+      width: 15%;
+    }
+  }
+}

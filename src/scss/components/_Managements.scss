@@ -1,0 +1,19 @@
+.Managements {
+  width: 100vw;
+  height: auto;
+  background: url('../assets/img/background-gradient.png')no-repeat top center;
+  background-size: cover;
+  padding: 40px 0;
+  &-container {
+    margin-top: 20px !important;
+    &-numbers {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    &-description {
+      font-size: 18px;
+      margin-top: 10px;
+      line-height: 1.2;
+    }
+  }
+}
